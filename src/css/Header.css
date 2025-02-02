@@ -39,13 +39,15 @@
   margin: 0;
   font-size: 9rem;
   color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .head h2 {
   margin: 0;
   font-size: 4rem;
-  color: red;
+  color: rgb(211, 211, 211);
   z-index: 2;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
