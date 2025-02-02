@@ -1,0 +1,63 @@
+.container {
+  background-color: red;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  position: relative; /* เพื่อให้สามารถจัดการภาพซ้อนกันได้ */
+  height: 100vh; /* ความสูงของ container เท่ากับ 100% ของหน้าจอ */
+  width: 100vw; /* ความกว้างของ container เท่ากับ 100% ของหน้าจอ */
+  z-index: -1;
+}
+
+.flex-item {
+  width: 250px; /* กำหนดความกว้างของ flex item */
+  height: 200px; /* กำหนดความสูงของ flex item */
+  flex-shrink: 0; /* ป้องกัน flex item หดตัว */
+  overflow: hidden; /* ป้องกันรูปภาพล้นออกมา */
+}
+
+.flex-item img {
+  width: 100%;
+  height: 100%;
+  /* ปรับขนาดรูปภาพให้พอดีกับ flex item */
+}
+
+.slideshow-image {
+  top: 0;
+  left: 0;
+  width: 100vw; /* กำหนดความกว้างให้เต็มหน้าจอ */
+  height: 100vh; /* กำหนดความสูงให้เต็มหน้าจอ */
+  object-fit: cover; /* ให้ภาพครอบคลุมพื้นที่ทั้งหมดของ container โดยไม่บิดเบือน */
+  position: absolute; /* วางภาพให้ซ้อนกัน */
+  transition: opacity 1s ease-in-out; /* เพิ่มแอนิเมชัน fade */
+  opacity: 0; /* เริ่มต้นที่ opacity 0 */
+}
+
+.slideshow-image.show {
+  opacity: 1; /* เมื่อมีคลาส 'show' จะทำให้ภาพแสดง */
+}
+
+.head {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.head h1 {
+  margin: 0;
+  font-size: 9rem;
+  color: white;
+}
+
+.head h2 {
+  margin: 0;
+  font-size: 4rem;
+  color: red;
+  z-index: 2;
+}
