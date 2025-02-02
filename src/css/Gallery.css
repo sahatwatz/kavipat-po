@@ -1,0 +1,70 @@
+.gallery {
+  background-color: green;
+  width: auto;
+  height: 90vh;
+  color: black;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.gallery-container {
+  background-color: red;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* สไตล์รูปภาพ */
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* ทำให้รูปขยายเมื่อ hover */
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* แสดง overlay เมื่อ hover */
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 รูปต่อแถว */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 รูปต่อแถว */
+  }
+}

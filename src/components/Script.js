@@ -12,15 +12,16 @@ export const startImageSlideshow = (images, setCurrentImageIndex) => {
 };
 
 export const handleImageFade = (currentImageIndex, prevImageIndex) => {
-  if (prevImageIndex !== null) {
-    const prevImage =
-      document.getElementsByClassName("slideshow-image")[prevImageIndex];
-    const currentImage =
-      document.getElementsByClassName("slideshow-image")[currentImageIndex];
+  const prevImage =
+    document.getElementsByClassName("slideshow-image")[prevImageIndex];
+  const currentImage =
+    document.getElementsByClassName("slideshow-image")[currentImageIndex];
 
-    prevImage.classList.remove("show");
-    currentImage.classList.add("show");
+  if (prevImage) {
+    prevImage.classList.remove("show"); // ลบ class show ออกจากภาพก่อนหน้า
   }
 
-  return currentImageIndex;
+  if (currentImage) {
+    currentImage.classList.add("show"); // เพิ่ม class show ให้กับภาพปัจจุบัน
+  }
 };

@@ -1,15 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header.js";
-import Shows from "./components/Shows.js";
+import Gallery from "./components/Gallery.js";
 
 function App() {
   return (
-    <body>
-      <div className="container ">
-        <Header />
-      </div>
-    </body>
+    <div className="app ">
+      <Header />
+      <Gallery />
+    </div>
   );
 }
 

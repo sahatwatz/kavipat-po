@@ -3,6 +3,13 @@ Body
 ------------------------------------*/
 
 /* modify link decoration */
+
+.app {
+  z-index: -5;
+}
+
+/* ป้องกัน Gallery ทับกับ Header */
+
 a:link {
   text-decoration: none;
 }
