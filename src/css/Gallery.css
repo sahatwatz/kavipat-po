@@ -1,33 +1,36 @@
 .gallery {
-  background-color: green;
+  /* background-color: green; */
   width: auto;
-  height: 90vh;
+  height: auto;
   color: black;
-  padding: 50px 20px;
   text-align: center;
 }
 
 .gallery-container {
-  background-color: red;
+  padding-top: 10px;
+  /* background-color: red; */
+  height: 100%;
   width: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 10px;
   justify-content: center;
-  padding: 20px;
 }
 
 /* สไตล์รูปภาพ */
 .gallery-item {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  z-index: 1;
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ทำให้รูปขยายเมื่อ hover */
@@ -37,19 +40,122 @@
 
 .overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: center;
   font-size: 1.5rem;
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 4;
+}
+
+.overlay span {
+  transform: translateY(-15px);
+}
+
+.overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* เริ่มต้นที่ไม่มีการแสดง */
+  transition: opacity 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.overlay2 span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Animation fade-in เมื่อ .fadeIn class ถูกเพิ่ม */
+.overlay2.fadeIn {
+  opacity: 1;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px); /* เริ่มต้นจากด้านล่าง */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* เลื่อนขึ้นมา */
+    opacity: 1;
+  }
+}
+
+/* ใช้ animation slideUp เมื่อ isVisible เป็น true */
+.overlay2 .slideUp {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.middle {
+  position: absolute;
+  background-color: rgba(255, 192, 203, 0.274);
+  width: 100%;
+  height: 10%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle2 {
+  background-color: yellow;
+  left: 0;
+  right: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  width: auto;
+  height: auto;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+
+.middle2 img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+}
+
+.middle span {
+  width: auto;
+  height: auto;
+  margin: 0;
+  position: absolute;
+  /* background-color: yellow; */
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.middle span small {
+  position: absolute;
+  bottom: -15px; /* ขยับลงล่าง */
+  right: 1px; /* ขยับไปขวา */
+  font-size: 0.7rem;
+  color: red;
+
+  padding: 3px 6px;
+  border-radius: 5px;
 }
 
 /* แสดง overlay เมื่อ hover */
@@ -59,12 +165,16 @@
 
 @media (max-width: 1024px) {
   .gallery-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 รูปต่อแถว */
+    grid-template-columns: repeat(3, 1fr); /* 2 รูปต่อแถว */
   }
 }
 
 @media (max-width: 600px) {
   .gallery-container {
     grid-template-columns: repeat(1, 1fr); /* 1 รูปต่อแถว */
+  }
+
+  .middle span {
+    font-size: 1rem;
   }
 }
