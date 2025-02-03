@@ -11,6 +11,7 @@ const Header = () => {
     require("../assets/img/pic2.jpg"),
     require("../assets/img/pic3.jpg")
   ];
+
   // เรียกใช้ฟังก์ชัน startImageSlideshow เพื่อเริ่มสไลด์ภาพ
   useEffect(() => {
     const stopSlideshow = startImageSlideshow(images, setCurrentImageIndex);
