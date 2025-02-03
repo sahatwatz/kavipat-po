@@ -1,1 +1,20 @@
 @import "css/default.css";
+#Home {
+  background-color: black;
+  height: 100vh;
+}
+
+#Projects {
+  background-color: white;
+  height: 100vh;
+}
+
+#Sketches {
+  background-color: #3498db;
+  height: 100vh;
+}
+
+#Certificate {
+  background-color: #f39c12;
+  height: 100vh;
+}

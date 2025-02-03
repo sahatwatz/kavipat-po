@@ -25,3 +25,37 @@ export const handleImageFade = (currentImageIndex, prevImageIndex) => {
     currentImage.classList.add("show"); // เพิ่ม class show ให้กับภาพปัจจุบัน
   }
 };
+
+let currentIndex = 0;
+
+export const handleScroll = (event, sectionsRef) => {
+  event.preventDefault();
+  const sections = sectionsRef.current;
+
+  if (!sections || sections.length === 0) return;
+
+  // ป้องกัน currentIndex เกินขอบเขตของ sections
+  currentIndex = Math.max(0, Math.min(currentIndex, sections.length - 1));
+
+  if (event.deltaY > 0 && currentIndex < sections.length - 1) {
+    currentIndex++;
+  } else if (event.deltaY < 0 && currentIndex > 0) {
+    currentIndex--;
+  }
+
+  sections[currentIndex]?.scrollIntoView({ behavior: "smooth" });
+};
+
+export const setupScrollListener = (sectionsRef) => {
+  const onScroll = (event) => {
+    if (sectionsRef.current.length > 0) {
+      handleScroll(event, sectionsRef);
+    }
+  };
+
+  window.addEventListener("wheel", onScroll, { passive: false });
+
+  return () => {
+    window.removeEventListener("wheel", onScroll);
+  };
+};
