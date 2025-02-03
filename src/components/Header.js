@@ -34,8 +34,8 @@ const Header = () => {
   return (
     <div className="container">
       <div className="head">
-        <h1>I'm Kavipat</h1>
-        <h2>an Architect</h2>
+        <h1 className="fade-up">I'm Kavipat</h1>
+        <h2 className="fade-up">an Architect</h2>
       </div>
       {/* แสดงภาพ */}
       {images.map((image, index) => (

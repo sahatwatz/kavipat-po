@@ -7,7 +7,7 @@
 }
 
 .gallery-container {
-  padding-top: 10px;
+  padding-top: 20px;
   /* background-color: red; */
   height: 100%;
   width: auto;
@@ -24,6 +24,16 @@
   height: 100%;
   overflow: hidden;
   z-index: 1;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.gallery-item.fade-in {
+  opacity: 1;
+}
+
+.gallery-item.slide-up {
+  transform: translateY(0);
 }
 
 .gallery-item img {
@@ -114,11 +124,10 @@
 }
 
 .middle2 {
-  background-color: yellow;
+  /* background-color: yellow; */
   left: 0;
   right: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 30px;
   position: absolute;
   width: auto;
   height: auto;
