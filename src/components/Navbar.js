@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "../css/Navbar.css";
 
-const sections = ["Home", "Projects", "Sketches", "Certificate"];
+const sections = [
+  "Home",
+  "Projects-1",
+  "Projects-2",
+  "Projects-3",
+  "Sketches",
+  "About"
+];
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("Home");

@@ -1,13 +1,17 @@
 .navbar {
+  width: auto;
+  height: auto;
   position: fixed;
   top: 50%;
-  left: 20px;
+  left: 2%;
   transform: translateY(-50%);
   z-index: 1000;
   transition: color 0.3s ease-in-out;
 }
 
 .navbar ul {
+  width: auto;
+  height: auto;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -17,14 +21,14 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 20px;
   transition: color 0.3s ease-in-out;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border: 2px solid currentColor; /* เปลี่ยนขอบ dot ตามสีข้อความ */
   border-radius: 50%;
   margin-right: 10px;
@@ -33,4 +37,34 @@
 
 .dot.filled {
   background-color: currentColor; /* เปลี่ยนสีวงกลมตามสีข้อความ */
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    top: 6%;
+    left: 0;
+    height: 50px;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .navbar ul {
+    width: 100%;
+    height: 50%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar li {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+
+  .dot {
+    border: 1px solid;
+    width: 4px;
+    height: 4px;
+    margin-right: 5px;
+  }
 }

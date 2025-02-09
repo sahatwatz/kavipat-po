@@ -4,17 +4,27 @@
   height: 100vh;
 }
 
-#Projects {
+#Projects-1 {
+  background-color: white;
+  height: 100vh;
+}
+
+#Projects-2 {
+  background-color: white;
+  height: 100vh;
+}
+
+#Projects-3 {
   background-color: white;
   height: 100vh;
 }
 
 #Sketches {
-  background-color: #3498db;
+  background-color: white;
   height: 100vh;
 }
 
-#Certificate {
-  background-color: #f39c12;
+#About {
+  background-color: White;
   height: 100vh;
 }
